@@ -145,7 +145,7 @@ export default {
     },
   },
   mounted() {
-    fetch('/api/summary', {
+    fetch('https://api.covid19api.com/summary', {
       method: 'GET',
       redirect: 'follow',
     })
