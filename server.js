@@ -5,8 +5,7 @@ module.exports = function () {
     createViteSSR(({ app, zipeSSR }) => {
       app.use(async (ctx, next) => {
         if (ctx.path === '/') {
-          // return the HTML
-          ctx.body = await zipeSSR('./dist-ssr/index.js') // component path relative to root
+          ctx.body = await zipeSSR('./dist-ssr/index.js')
           return
         }
 

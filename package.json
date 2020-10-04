@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite --mode development --config conf.js",
     "serve": "vite serve --mode production --config conf.js --port 80",
-    "build": "cross-env NODE_ENV=production vite build --ssr --sourcemap --mode production --config conf.js"
+    "build": "cross-env NODE_ENV=production vite build --ssr --mode production --config conf.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.0",

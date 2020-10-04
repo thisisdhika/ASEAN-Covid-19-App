@@ -4881,19 +4881,18 @@ var script = {
     dots: 5
   })
 };
-const _withId = /* @__PURE__ */ vue.withScopeId("data-v-592528d2");
+const _withId = /* @__PURE__ */ vue.withScopeId("data-v-0c537f98");
 const ssrRender = /* @__PURE__ */ _withId(function ssrRender2(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   _push(`<div${serverRenderer.ssrRenderAttrs(vue.mergeProps({
     class: ["logo", [`text-${$props.size}`]]
-  }, _attrs))} data-v-592528d2><span class="text-green-500" data-v-592528d2>ASEAN</span><span data-v-592528d2>C</span><div class="nineteen" data-v-592528d2><!--[-->`);
+  }, _attrs))} data-v-0c537f98><span class="text-green-500" data-v-0c537f98>ASEAN</span><span data-v-0c537f98>C</span><div class="nineteen" data-v-0c537f98><!--[-->`);
   serverRenderer.ssrRenderList(_ctx.dots, (i) => {
-    _push(`<span class="dot"${serverRenderer.ssrRenderAttr("key", i)} data-v-592528d2></span>`);
+    _push(`<span class="dot"${serverRenderer.ssrRenderAttr("key", i)} data-v-0c537f98></span>`);
   });
-  _push(`<!--]--></div><span data-v-592528d2>APP</span></div>`);
+  _push(`<!--]--></div><span data-v-0c537f98>APP</span></div>`);
 });
 script.ssrRender = ssrRender;
-script.__scopeId = "data-v-592528d2";
-script.__file = "src/components/BrandLogo.vue";
+script.__scopeId = "data-v-0c537f98";
 /**
   * vee-validate v4.0.0-beta.1
   * (c) 2020 Abdelrahman Awad
@@ -10274,7 +10273,6 @@ function block0(Component) {
 if (typeof block0 === "function")
   block0(script$1);
 script$1.ssrRender = ssrRender$1;
-script$1.__file = "src/pages/Home.vue";
 var Home = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   default: script$1
@@ -18028,7 +18026,6 @@ function block0$1(Component) {
 if (typeof block0$1 === "function")
   block0$1(script$2);
 script$2.ssrRender = ssrRender$2;
-script$2.__file = "src/pages/Summary.vue";
 var Summary = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   default: script$2
@@ -19187,13 +19184,13 @@ function ssrRender$3(_ctx, _push, _parent, _attrs, $props, $setup, $data, $optio
       }),
       _: 1
     }, _parent));
-    _push(`</div></div></div><div class="hidden md:block"><div class="ml-4 flex items-center md:ml-6"><!-- Profile dropdown --><div class="ml-3 relative"><div><button class="max-w-xs flex items-center text-sm rounded-full text-white transition-all duration-500 ease-out shadow-none focus:outline-none hover:shadow-lg" aria-label="User menu" aria-haspopup="true"><img class="h-10 w-10 rounded-full"${serverRenderer.ssrRenderAttr("src", $options.userAvatar)}${serverRenderer.ssrRenderAttr("alt", _ctx.currentUser.email)}></button></div>`);
+    _push(`</div></div></div><div class="hidden md:block"><div class="ml-4 flex items-center md:ml-6"><div class="ml-3 relative"><div><button class="max-w-xs flex items-center text-sm rounded-full text-white transition-all duration-500 ease-out shadow-none focus:outline-none hover:shadow-lg" aria-label="User menu" aria-haspopup="true"><img class="h-10 w-10 rounded-full"${serverRenderer.ssrRenderAttr("src", $options.userAvatar)}${serverRenderer.ssrRenderAttr("alt", _ctx.currentUser.email)}></button></div>`);
     if (_ctx.userMenuVisible) {
       _push(`<div class="absolute right-0 mt-2 w-48 rounded-md shadow-xl"><div class="py-1 rounded-md bg-white shadow-xs" role="menu" aria-orientation="vertical" aria-labelledby="user-menu"><button class="w-full flex items-center text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"><span class="flex-auto">Keluar</span><i class="ml-auto fas fa-sign-out-alt"></i></button></div></div>`);
     } else {
       _push(`<!---->`);
     }
-    _push(`</div></div></div><div class="-mr-2 flex md:hidden"><!-- Mobile menu button --><button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white"><!-- Menu open: "hidden", Menu closed: "block" --><svg class="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg><!-- Menu open: "block", Menu closed: "hidden" --><svg class="hidden h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div></div></div><div class="hidden md:hidden"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700"> Dashboard </a></div><div class="pt-4 pb-3 border-t border-gray-700"><div class="flex items-center px-5 space-x-3"><div class="flex-shrink-0"><img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt=""></div><div class="space-y-1"><div class="text-base font-medium leading-none text-white">Tom Cook</div><div class="text-sm font-medium leading-none text-gray-400">tom@example.com</div></div></div><div class="mt-3 px-2 space-y-1"><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"> Sign out </a></div></div></div></nav>`);
+    _push(`</div></div></div><div class="-mr-2 flex md:hidden"><button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white"><svg class="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg><svg class="hidden h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div></div></div><div class="hidden md:hidden"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700"> Dashboard </a></div><div class="pt-4 pb-3 border-t border-gray-700"><div class="flex items-center px-5 space-x-3"><div class="flex-shrink-0"><img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt=""></div><div class="space-y-1"><div class="text-base font-medium leading-none text-white">Tom Cook</div><div class="text-sm font-medium leading-none text-gray-400">tom@example.com</div></div></div><div class="mt-3 px-2 space-y-1"><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"> Sign out </a></div></div></div></nav>`);
   } else {
     _push(`<!---->`);
   }
@@ -19202,7 +19199,6 @@ function ssrRender$3(_ctx, _push, _parent, _attrs, $props, $setup, $data, $optio
   _push(`</main><footer class="fixed bottom-0 inset-x-0"><span className="block my-2 text-center"> © ASEANC19 App ${serverRenderer.ssrInterpolate(new Date().getFullYear())}. All rights reserved. </span></footer></div>`);
 }
 script$3.ssrRender = ssrRender$3;
-script$3.__file = "src/App.vue";
 let router = void 0;
 let app = vue.createApp(script$3);
 const $el = document.createElement("div");
