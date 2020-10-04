@@ -26,17 +26,4 @@ module.exports = {
       text: 'rgb(101, 105, 123)',
     },
   },
-  width: {
-    'card-xs': '20rem',
-    'card-sm': '24rem',
-    'card-md': '28rem',
-    'card-lg': '32rem',
-    'card-full': '100%',
-  },
-  fontSize: {
-    '2xl': '1.875rem',
-    '3xl': '2.4rem',
-    '4xl': '3.2rem',
-    '5xl': '3.6rem',
-  },
 }

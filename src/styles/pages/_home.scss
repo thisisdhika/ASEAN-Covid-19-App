@@ -1,0 +1,18 @@
+.home {
+  &__content {
+    @apply flex;
+    @apply justify-between;
+    @apply items-center;
+    @apply w-full;
+    @apply min-h-screen;
+  }
+
+  &__info {
+    .heading {
+      @apply text-2xl;
+      @apply leading-10;
+      @apply tracking-tight;
+      @apply text-gray-900;
+    }
+  }
+}

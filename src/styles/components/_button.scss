@@ -1,0 +1,42 @@
+.btn {
+  @apply inline-flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply border;
+  @apply border-transparent;
+  @apply text-base;
+  @apply leading-6;
+  @apply font-semibold;
+  @apply transition;
+  @apply duration-150;
+  @apply ease-in-out;
+  @apply rounded-md;
+  @apply shadow;
+  @apply min-h-10;
+
+  &:focus {
+    @apply shadow-outline;
+    @apply outline-none;
+  }
+
+  &:not(&--no-gap-x) {
+    @apply px-5;
+  }
+
+  &:not(&--no-gap-y) {
+    @apply py-2;
+  }
+
+  &--primary {
+    @apply text-white;
+    @apply bg-indigo-600;
+    &:hover {
+      @apply bg-indigo-500;
+    }
+  }
+
+  &--large {
+    @apply text-lg;
+    @apply tracking-wider;
+  }
+}

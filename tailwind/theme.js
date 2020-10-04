@@ -231,11 +231,12 @@ module.exports = {
     full: '100%',
     ...breakpoints(theme('screens')),
   }),
-  minHeight: {
+  minHeight: (theme) => ({
     0: '0',
     full: '100%',
     screen: '100vh',
-  },
+    ...theme('spacing'),
+  }),
   minWidth: {
     0: '0',
     full: '100%',
@@ -547,6 +548,20 @@ module.exports = {
     },
   },
   extend: {
+    width: {
+      'card-xs': '20rem',
+      'card-sm': '24rem',
+      'card-md': '28rem',
+      'card-lg': '32rem',
+      'card-full': '100%',
+      'viewport-full': '100vw',
+    },
+    fontSize: {
+      '2xl': '1.875rem',
+      '3xl': '2.4rem',
+      '4xl': '3.2rem',
+      '5xl': '3.6rem',
+    },
     ...lightTheme,
   },
 }

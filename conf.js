@@ -1,5 +1,7 @@
 // import path from 'path'
 import { eslint } from 'rollup-plugin-eslint'
+const tailwindVite = require('./tailwind.vite')
+const viteAutoRouting = require('./vite-auto-routing')
 
 export default {
   enableEsbuild: true,
@@ -14,5 +16,8 @@ export default {
     eslint({
       useEslintrc: true,
     }),
+    tailwindVite('./tailwind/index.js'),
+    viteAutoRouting(),
   ],
+  vueCustomBlockTransforms: {},
 }

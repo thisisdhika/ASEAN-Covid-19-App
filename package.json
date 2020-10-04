@@ -9,14 +9,19 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.0",
+    "apexcharts": "^3.22.0",
     "firebase": "^7.22.0",
     "gsap": "file:gsap-bonus.tgz",
+    "js-md5": "^0.7.3",
     "tailwindcss": "^1.8.10",
+    "vee-validate": "^4.0.0-beta.1",
     "vue": "^3.0.0-rc.1",
     "vue-router": "^4.0.0-beta.12",
-    "vuex": "^4.0.0-beta.4"
+    "vuex": "^4.0.0-beta.4",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
+    "@rollup/plugin-virtual": "^2.0.3",
     "@vue/compiler-sfc": "^3.0.0-rc.1",
     "autoprefixer": "^9.0.0",
     "postcss-flexbugs-fixes": "^4.2.1",
