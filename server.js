@@ -5,7 +5,7 @@ module.exports = function () {
     createViteSSR(({ app, zipeSSR }) => {
       app.use(async (ctx, next) => {
         if (ctx.path === '/') {
-          ctx.body = await zipeSSR('./dist-ssr/index.js')
+          ctx.body = await zipeSSR('./dist')
           return
         }
 
