@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --mode development --config conf.js",
-    "build": "vite build --mode production --config conf.js"
+    "serve": "vite serve --mode production --config conf.js --port 80",
+    "build": "cross-env NODE_ENV=production vite build --ssr --sourcemap --mode production --config conf.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.0",
@@ -23,11 +24,13 @@
   "devDependencies": {
     "@rollup/plugin-virtual": "^2.0.3",
     "@vue/compiler-sfc": "^3.0.0-rc.1",
+    "@vue/server-renderer": "^3.0.0",
     "autoprefixer": "^9.0.0",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "rollup-plugin-eslint": "^7.0.0",
     "sass": "^1.26.11",
-    "vite": "^1.0.0-rc.1"
+    "vite": "^1.0.0-rc.1",
+    "zipe": "0.0.4"
   }
 }
