@@ -13,7 +13,6 @@ module.exports = {
     }),
     require('./tailwind.vite')('./tailwind/index.js'),
     require('./vite-auto-routing')(),
-    require('./server')(),
   ],
   vueCustomBlockTransforms: {},
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite --mode development --config conf.js",
     "serve": "vite serve --mode production --config conf.js --port 80",
-    "build": "cross-env NODE_ENV=production vite build --sourcemap --mode production --config conf.js"
+    "build": "cross-env NODE_ENV=production vite build --ssr --sourcemap --mode production --config conf.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.0",
@@ -31,7 +31,6 @@
     "postcss-preset-env": "^6.7.0",
     "rollup-plugin-eslint": "^7.0.0",
     "sass": "^1.26.11",
-    "vite": "^1.0.0-rc.1",
-    "zipe": "0.0.4"
+    "vite": "^1.0.0-rc.1"
   }
 }
