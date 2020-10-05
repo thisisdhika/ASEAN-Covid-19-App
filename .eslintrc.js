@@ -10,7 +10,7 @@ module.exports = {
   rules: {
     'max-len': [
       'error',
-      240,
+      340,
       4,
       {
         ignoreUrls: true,

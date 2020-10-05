@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import gsap, { TweenLite } from 'gsap'
 import firebase from './plugins/firebase'
+import moment from './plugins/moment'
 
 import buildRouter from './router'
 import store from './store'
@@ -17,6 +18,7 @@ const {
 } = app
 
 prototype.firebase = firebase
+prototype.moment = moment
 
 window.hidePageLoader = () => {
   TweenLite.to('.page-loader', 0.35, { opacity: 0, zIndex: -1 }).then(() => {

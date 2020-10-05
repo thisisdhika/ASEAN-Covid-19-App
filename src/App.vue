@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <nav v-if="isAuth" class="rounded-lg bg-white shadow m-2">
+  <div class="flex flex-col min-h-screen">
+    <nav v-if="isAuth" class="rounded-lg bg-white shadow m-2 relative z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
@@ -133,7 +133,7 @@
       </div>
     </nav>
 
-    <main>
+    <main class="flex flex-col flex-auto pb-12">
       <router-view></router-view>
     </main>
     <footer class="fixed bottom-0 inset-x-0">
@@ -194,7 +194,10 @@ export default {
       },
     }
 
-    const menus = routes.filter((r) => r.meta.showOnNavbar && r.meta.requiresAuth)
+    const menus = routes
+      .filter((r) => r.meta.showOnNavbar && r.meta.requiresAuth)
+      .sort((a, b) => a.meta.navbarOrder - b.meta.navbarOrder)
+
     return { userMenuTransitionProps, menus }
   },
   data: () => ({

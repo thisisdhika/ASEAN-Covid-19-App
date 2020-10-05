@@ -6,4 +6,7 @@ export default {
   rollupInputOptions: {
     plugins: [nodePolyfills()],
   },
+  optimizeDeps: {
+    include: ['flatpickr/dist/l10n/id'],
+  },
 }

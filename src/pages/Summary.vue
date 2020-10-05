@@ -5,18 +5,32 @@
     meta: {
       requiresAuth: true,
       authenticatedPath: true,
-      showOnNavbar: true
+      showOnNavbar: true,
+      navbarOrder: 0,
     },
 }
 </route>
 
 <template>
-  <div class="container mt-4">
-    <div class="flex flex-wrap">
-      <div class="w-full">
-        <div class="bg-white shadow-lg rounded-md m-1 px-4 pt-4">
-          <div class="h-full" ref="summaryChart"></div>
-        </div>
+  <div v-if="isReady" class="container flex flex-wrap pt-6">
+    <div class="w-1/3 mb-3">
+      <div class="bg-white shadow-lg rounded-md m-1 px-4 py-4">
+        <div class="h-full" ref="NewRecovered"></div>
+      </div>
+    </div>
+    <div class="w-1/3 mb-3">
+      <div class="bg-white shadow-lg rounded-md m-1 px-4 py-4">
+        <div class="h-full" ref="NewConfirmed"></div>
+      </div>
+    </div>
+    <div class="w-1/3 mb-3">
+      <div class="bg-white shadow-lg rounded-md m-1 px-4 py-4">
+        <div class="h-full" ref="NewDeaths"></div>
+      </div>
+    </div>
+    <div class="w-full">
+      <div class="bg-white shadow-lg rounded-md m-1 px-4 pt-4">
+        <div class="h-full" ref="summaryChart"></div>
       </div>
     </div>
   </div>
@@ -28,23 +42,9 @@ import ApexCharts from 'apexcharts'
 import tailwindConfig from 'tailwind-vite'
 
 export default {
-  data: () => ({}),
-  setup() {
-    return {
-      colors: [
-        'gray',
-        'red',
-        'orange',
-        'yellow',
-        'green',
-        'teal',
-        'blue',
-        'indigo',
-        'purple',
-        'pink',
-      ],
-    }
-  },
+  data: () => ({
+    isReady: false,
+  }),
   methods: {
     createSummaryChart(countries) {
       const options = {
@@ -143,18 +143,106 @@ export default {
 
       new ApexCharts(this.$refs.summaryChart, options).render()
     },
+    createSpark(id, title, color, data) {
+      const options = {
+        chart: {
+          id,
+          type: 'line',
+          height: 160,
+          sparkline: {
+            enabled: true,
+          },
+          group: 'sparklines',
+        },
+        series: [
+          {
+            name: title,
+            data: data.map((c) => c[id]),
+          },
+        ],
+        stroke: {
+          curve: 'smooth',
+        },
+        markers: {
+          size: 0,
+        },
+        tooltip: {
+          fixed: {
+            enabled: true,
+            position: 'right',
+          },
+        },
+        title: {
+          text: title,
+          style: {
+            fontSize: '20px',
+          },
+        },
+        subtitle: {
+          text: data.reduce((prevVal, currVal) => currVal[id] + prevVal, 0),
+          style: {
+            fontSize: '26px',
+          },
+        },
+        labels: data.map((c) => c.Country),
+        xaxis: {
+          type: 'category',
+          tooltip: {
+            enabled: false,
+          },
+          labels: {
+            trim: true,
+          },
+        },
+        colors: [color],
+      }
+
+      new ApexCharts(this.$refs[id], options).render()
+    },
+  },
+  created() {
+    window.showPageLoader()
   },
   mounted() {
     fetch('https://api.covid19api.com/summary', {
       method: 'GET',
       redirect: 'follow',
     })
-      .then((response) => response.json())
+      .then((response) => {
+        this.isReady = true
+        return response.json()
+      })
       .then((result) => {
-        console.log(result)
-        this.createSummaryChart(
-          result.Countries.filter((c) => ASEAN_MEMBER.CountriesCode.includes(c.CountryCode))
+        const aseanData = result.Countries.filter((c) =>
+          ASEAN_MEMBER.CountriesCode.includes(c.CountryCode)
         )
+
+        this.createSummaryChart(aseanData)
+
+        this.createSpark(
+          'NewConfirmed',
+          'Total Kasus Baru Terkonfirmasi',
+          tailwindConfig.theme.colors.indigo['600'],
+          aseanData
+        )
+
+        this.createSpark(
+          'NewDeaths',
+          'Total Kasus Kematian Baru',
+          tailwindConfig.theme.colors.red['600'],
+          aseanData
+        )
+
+        this.createSpark(
+          'NewRecovered',
+          'Total Kasus Terpulihkan Baru',
+          tailwindConfig.theme.colors.green['500'],
+          aseanData
+        )
+
+        setTimeout(() => {
+          window.hidePageLoader()
+        }, 1500)
       })
       .catch((error) => console.log('error', error))
   },

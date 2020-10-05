@@ -11,5 +11,17 @@ export const ASEAN_MEMBER = {
     'Cambodia',
     'Myanmar',
   ],
+  CountriesSlug: [
+    'singapore',
+    'brunei',
+    'malaysia',
+    'thailand',
+    'indonesia',
+    'philippines',
+    'vietnam',
+    'lao-pdr',
+    'cambodia',
+    'myanmar',
+  ],
   CountriesCode: ['SG', 'BN', 'MY', 'TH', 'ID', 'PH', 'VN', 'LA', 'KH', 'MM'],
 }
