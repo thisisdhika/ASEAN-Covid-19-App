@@ -13,7 +13,7 @@
   <section class="home">
     <div class="container home__content">
       <div class="home__info">
-        <BrandLogo size="4xl" />
+        <BrandLogo />
         <h3 class="heading">
           Informasi terkini mengenai penyebaran <strong>Covid-19</strong> <br />
           di negara negara ASEAN. <br />
