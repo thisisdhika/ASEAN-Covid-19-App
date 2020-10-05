@@ -12,7 +12,7 @@ function parsePagesDirectory(dir) {
     (f) => `{
         name: '${f.name}',
         path: '/${f.name}',
-        component: () => import('${f.importPath}'),
+        component: ${f.name},
         ...(${f.name}.__routeOptions || {}),
     }`
   )

@@ -3,19 +3,17 @@ import 'firebase/auth'
 import 'firebase/analytics'
 import 'firebase/firestore'
 
-firebase.initializeApp({
-  apiKey: 'AIzaSyD7MY8GJu82plLaz65psC6gfWcekbPxH4o',
-  authDomain: 'ac19app.firebaseapp.com',
-  databaseURL: 'https://ac19app.firebaseio.com',
-  projectId: 'ac19app',
-  storageBucket: 'ac19app.appspot.com',
-  messagingSenderId: '371296486007',
-  appId: '1:371296486007:web:cf30421514995d73a17c72',
-  measurementId: 'G-TRDM7FP7LH',
-})
-
-export default {
-  name: 'firebase',
-  module: firebase,
-  hasGlobal: true,
+const config = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 }
+
+firebase.initializeApp(config)
+
+export default firebase

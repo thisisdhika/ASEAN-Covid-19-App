@@ -1,5 +1,5 @@
 <template>
-  <div class="logo" :class="[`text-${size}`]">
+  <div class="logo" :style="{ fontSize: size }">
     <span class="text-green-500">ASEAN</span>
     <span>C</span>
     <div class="nineteen">
@@ -15,7 +15,7 @@ export default {
   props: {
     size: {
       type: String,
-      default: '4xl',
+      default: '48px',
     },
   },
   data: () => ({

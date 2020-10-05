@@ -1,2 +1,5 @@
 /dist/
 /public/
+**/*.html
+**/*.scss
+**/*.css

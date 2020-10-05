@@ -1,26 +1,16 @@
 module.exports = {
   root: true,
-  globals: {
-    __VUZE_VER__: true,
-    __VUE_REQUIRED__: true,
-  },
-  parserOptions: {
-    parser: '@typescript-eslint/parser',
-    ecmaVersion: 2017,
-    sourceType: 'module',
-  },
   env: {
     node: true,
-    browser: true,
-    es6: true,
-    'jest/globals': true,
   },
-  plugins: ['jest'],
-  extends: ['standard', 'plugin:vue/recommended', 'plugin:jest/recommended'],
+  extends: ['plugin:vue/vue3-essential', '@vue/standard'],
+  parserOptions: {
+    ecmaVersion: 2020,
+  },
   rules: {
     'max-len': [
       'error',
-      140,
+      240,
       4,
       {
         ignoreUrls: true,
@@ -50,58 +40,5 @@ module.exports = {
     ],
     'no-prototype-builtins': 'off',
     'no-void': 'off',
-    'vue/name-property-casing': 'off',
-    'vue/require-default-prop': 'off',
-    'vue/require-prop-types': 'off',
-    'vue/prop-name-casing': 'error',
-    'vue/return-in-computed-property': 'off',
-    'vue/html-self-closing': 'off',
-    'vue/html-closing-bracket-spacing': 'off',
-    'jest/no-disabled-tests': 'off',
-    'jest/no-large-snapshots': 'warn',
-    'jest/prefer-spy-on': 'warn',
-    'jest/prefer-to-be-null': 'warn',
-    'jest/prefer-to-be-undefined': 'warn',
-    'jest/prefer-to-contain': 'warn',
-    'jest/prefer-to-have-length': 'warn',
   },
-  overrides: [
-    {
-      files: '**/*.vue',
-      rules: {
-        indent: 'off',
-        'vue/script-indent': [
-          'error',
-          2,
-          {
-            baseIndent: 0,
-            switchCase: 0,
-            ignores: [],
-          },
-        ],
-        'vue/html-closing-bracket-newline': [
-          'error',
-          {
-            singleline: 'never',
-            multiline: 'always',
-          },
-        ],
-        'vue/html-closing-bracket-spacing': 'error',
-        'vue/max-attributes-per-line': [
-          'error',
-          {
-            singleline: 5,
-            multiline: {
-              max: 1,
-              allowFirstLine: false,
-            },
-          },
-        ],
-        'vue/valid-v-on': 'off',
-        'vue/no-v-html': 'off',
-        'vue/singleline-html-element-content-newline': 'off',
-        'vue/multiline-html-element-content-newline': 'off',
-      },
-    },
-  ],
-};
+}

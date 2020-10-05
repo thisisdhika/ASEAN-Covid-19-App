@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import gsap, { TweenLite } from 'gsap'
-import loadPlugins from './plugins'
+import firebase from './plugins/firebase'
 
 import buildRouter from './router'
 import store from './store'
@@ -9,9 +9,14 @@ import App from './App.vue'
 
 import './styles/main.scss'
 
-let router = undefined
-let app = createApp(App)
+let router
+const app = createApp(App)
 const $el = document.createElement('div')
+const {
+  config: { globalProperties: prototype },
+} = app
+
+prototype.firebase = firebase
 
 window.hidePageLoader = () => {
   TweenLite.to('.page-loader', 0.35, { opacity: 0, zIndex: -1 }).then(() => {
@@ -25,26 +30,12 @@ window.showPageLoader = () => {
   })
 }
 
-loadPlugins().then((plugins) => {
-  const {
-    config: { globalProperties: prototype },
-  } = app
+if (prototype.firebase && !router) {
+  router = buildRouter(prototype.firebase)
+  $el.setAttribute('data-app', '')
+  document.body.prepend($el)
 
-  plugins.forEach(({ default: pkg }) => {
-    if (Object.prototype.hasOwnProperty.call(pkg, 'hasGlobal')) prototype[pkg.name] = pkg.module
-
-    if (Object.prototype.hasOwnProperty.call(pkg, 'hasWindow')) window[pkg.name] = pkg.module
-
-    if (Object.prototype.hasOwnProperty.call(pkg, 'hasVuePlugin')) app.use(pkg.name)
+  prototype.firebase.auth().onAuthStateChanged(() => {
+    if (!app._container) app.use(store).use(router).mount($el)
   })
-
-  if (prototype.firebase && !router) {
-    router = buildRouter(prototype.firebase)
-    $el.setAttribute('data-app', '')
-    document.body.prepend($el)
-
-    prototype.firebase.auth().onAuthStateChanged(() => {
-      if (!app._container) app.use(store).use(router).mount($el)
-    })
-  }
-})
+}

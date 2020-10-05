@@ -1,19 +1,19 @@
 {
-  "name": "ac19a",
+  "name": "aseanc19a",
   "version": "0.0.1",
   "author": "Dhika Putra Ardana <dhikaardana87@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development vite --mode development --config conf.js",
-    "serve": "vite serve --mode production --config conf.js --port 80",
-    "build": "cross-env NODE_ENV=production vite build --ssr --sourcemap --mode production --config conf.js"
+    "dev": "cross-env NODE_ENV=development vite",
+    "serve": "cross-env NODE_ENV=production nodemon server.js",
+    "build": "cross-env NODE_ENV=production vite build --sourcemap --minify"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.0",
     "apexcharts": "^3.22.0",
     "firebase": "^7.22.0",
     "gsap": "file:gsap-bonus.tgz",
-    "js-md5": "^0.7.3",
+    "md5": "^2.3.0",
     "tailwindcss": "^1.8.10",
     "vee-validate": "^4.0.0-beta.1",
     "vue": "^3.0.0-rc.1",
@@ -24,12 +24,21 @@
   "devDependencies": {
     "@rollup/plugin-virtual": "^2.0.3",
     "@vue/compiler-sfc": "^3.0.0-rc.1",
+    "@vue/eslint-config-standard": "^5.1.2",
     "@vue/server-renderer": "^3.0.0",
     "autoprefixer": "^9.0.0",
     "cross-env": "^7.0.2",
+    "eslint": "^7.10.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^7.0.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
-    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-node-polyfills": "^0.2.1",
     "sass": "^1.26.11",
     "vite": "^1.0.0-rc.1"
   }
