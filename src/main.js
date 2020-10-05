@@ -33,11 +33,12 @@ window.showPageLoader = () => {
 }
 
 if (prototype.firebase && !router) {
-  router = buildRouter(prototype.firebase)
   $el.setAttribute('data-app', '')
   document.body.prepend($el)
 
   prototype.firebase.auth().onAuthStateChanged(() => {
-    if (!app._container) app.use(store).use(router).mount($el)
+    if (!app._container) {
+      app.use(store).use(buildRouter(prototype.firebase.auth().currentUser)).mount($el)
+    }
   })
 }

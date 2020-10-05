@@ -1,7 +1,7 @@
 import * as Router from 'vue-router'
 import routes from 'vite-auto-routing'
 
-function buildRouter(firebase) {
+function buildRouter(currentUser) {
   const router = Router.createRouter({
     history: Router.createWebHistory(),
     routes,
@@ -11,7 +11,6 @@ function buildRouter(firebase) {
     const unAuthenticatedRoutes = routes.filter((r) => !r.meta.authenticatedPath)
     const authenticatedRoutes = routes.filter((r) => r.meta.authenticatedPath)
 
-    const currentUser = firebase.auth().currentUser
     const requiresAuth = to.matched.some((rec) => rec.meta.requiresAuth)
 
     window.showPageLoader()
